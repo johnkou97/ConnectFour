@@ -1,0 +1,30 @@
+import random
+
+class Player:
+    '''
+    Player class to represent a player in the game.
+    '''
+    def __init__(self, name, disc, is_human=True):
+        self.name = name
+        self.disc = disc
+        self.is_human = is_human
+
+    def GetMove(self, board):
+        '''
+        Get the player's move.
+        If the player is human, prompt for input.
+        If the player is a computer, choose a random valid move.
+        '''
+        if self.is_human:
+            while True:
+                try:
+                    column = int(input(f"{self.name}, choose a column (1-7): ")) - 1
+                    if 0 <= column < board.columns and board.grid[0][column] == ".":
+                        return column
+                    else:
+                        print("Invalid move. Try again.")
+                except ValueError:
+                    print("Please enter a valid number.")
+        else:
+            valid_columns = [col for col in range(board.columns) if board.grid[0][col] == "."]
+            return random.choice(valid_columns)
