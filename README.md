@@ -6,6 +6,7 @@ A Python implementation of the classic Connect Four game. This version is design
 - Play Connect Four in the terminal.
 - Supports two players: human vs human, human vs computer, or computer vs computer.
 - Simple interface with clear instructions for use.
+- New GUI interface for a more interactive experience.
 
 ## Installation
 
@@ -50,6 +51,21 @@ Install the package locally to make the game accessible from anywhere on your sy
    connect-four
    ```
 
+## GUI Interface
+
+The game now includes a graphical user interface (GUI) for a more interactive experience. The GUI was built using the Tkinter library, which is included with Python by default.
+
+To play the game with the GUI interface, there are again two options:
+- Run the game without installation:
+  ```bash
+  python -m connect_four.main --gui
+  ```
+- Install the package locally as before and run the game:
+  ```bash
+  connect-four-gui
+  ```
+The GUI interface provides the same functionality as the command-line version, allowing you to play against another player or a computer opponent.
+
 ## How to Play
 
 The game is played on a 6x7 grid. Players take turns dropping their discs into one of the seven columns. The goal is to connect four of your discs in a row (horizontally, vertically, or diagonally) before your opponent.
@@ -58,13 +74,19 @@ The game is played on a 6x7 grid. Players take turns dropping their discs into o
 2. During a Human player's turn, you will input the column number (1-7) where you want to drop your disc.
 3. The game continues until one player connects four discs or the board is full, resulting in a draw.
 
+**For the GUI version:**
+- Click on the column where you want to drop your disc.
+- The game will automatically switch between players and display the winner or a draw at the end.
+- After the game ends, there is an option to play again or exit the game.
+
 ## Project Structure
 ```
 connect_four/
 ├── connect_four/
 │   ├── __init__.py
 │   ├── board.py          # Contains the Board class
-│   ├── game.py           # Contains the game logic (ConnectFour class)
+│   ├── cli.py            # Contains the CLI game interface and logic
+│   ├── gui.py            # Contains the GUI game interface and logic
 │   ├── player.py         # Contains the Player class
 │   └── main.py           # Entry point for the game
 ├── setup.py              # For package installation
@@ -76,6 +98,6 @@ connect_four/
 - Currently designed for local execution and not published to any external repositories or package managers.
 
 ## Future Improvements
-- Add GUI functionality.
+- ✅ Add GUI functionality. ✅
 - Implement Unit Tests for the game logic.
 - Improve AI for computer players with more strategic decision-making.
