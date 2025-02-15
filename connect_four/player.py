@@ -9,7 +9,7 @@ class Player:
         self.disc = disc
         self.is_human = is_human
 
-    def GetMove(self, board):
+    def get_move(self, board) -> int:
         '''
         Get the player's move.
         If the player is human, prompt for input.
@@ -29,7 +29,7 @@ class Player:
             valid_columns = [col for col in range(board.columns) if board.grid[0][col] == "."]
             return random.choice(valid_columns)
 
-def setup_players():
+def setup_players() -> list:
     '''
     Set the players for the game.
     Ask for input to determine if each player is human or computer.

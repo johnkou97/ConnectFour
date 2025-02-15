@@ -8,22 +8,30 @@ A Python implementation of the classic Connect Four game. This version is design
 - Simple interface with clear instructions for use.
 - New GUI interface for a more interactive experience.
 
-## Installation
 
-You can run the game either by installing it as a Python package or directly executing the script. Follow the instructions below based on your preferred method.
-
-### Prerequisites
+## Prerequisites
 Ensure you have Python 3.6 or later installed on your system. You can check your Python version by running:
 ```bash
 python --version
 ```
+The game only uses standard libraries, so there are no additional dependencies to install.
+
+## Installation
+
+First, clone the repository to your local machine:
+```bash
+git clone https://github.com/johnkou97/ConnectFour.git
+```
+
+You can run the game either by installing it as a Python package or directly executing the script. Follow the instructions below based on your preferred method.
+
 
 ### Option 1: Run Without Installation
 You can directly execute the script without installing it.
 
-1. Go to inside the `connect_four` directory where `setup.py` is located:
+1. Go to inside the `ConnectFour` directory where `setup.py` is located:
    ```bash
-   cd connect_four
+   cd ConnectFour
    ```
 
 2. Run the game using the Python interpreter:
@@ -37,7 +45,7 @@ Install the package locally to make the game accessible from anywhere on your sy
 
 1. Navigate to the project directory where `setup.py` is located:
    ```bash
-   cd connect_four
+   cd ConnectFour
    ```
 
 2. Install the package using pip:
@@ -81,7 +89,7 @@ The game is played on a 6x7 grid. Players take turns dropping their discs into o
 
 ## Project Structure
 ```
-connect_four/
+ConnectFour/
 ├── connect_four/
 │   ├── __init__.py
 │   ├── board.py          # Contains the Board class

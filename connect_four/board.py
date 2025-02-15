@@ -7,7 +7,7 @@ class Board:
         self.columns = 7
         self.grid = [["." for _ in range(self.columns)] for _ in range(self.rows)]
 
-    def Display(self):
+    def display(self) -> None:
         '''
         Display the game board.
         '''
@@ -15,7 +15,7 @@ class Board:
             print("|" + " ".join(row) + "|")
         print(" " + " ".join(map(str, range(1, self.columns + 1))))
 
-    def DropDisc(self, column, disc):
+    def drop_disc(self, column: int, disc: str):
         '''
         Drop a disc into the specified column.
         '''
@@ -25,13 +25,13 @@ class Board:
                 return self.grid.index(row), column
         return None
 
-    def CheckFull(self):
+    def is_full(self) -> bool:
         '''
         Check if the board is full. If so, the game is a draw.
         '''
         return all(cell != "." for row in self.grid for cell in row)
 
-    def CheckWinner(self, disc):
+    def check_winner(self, disc: str) -> bool:  
         '''
         Check if the specified disc has won the game by connecting four discs.
         '''

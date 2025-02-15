@@ -5,9 +5,12 @@ class ConnectFourCLI:
         self.board = Board()
         self.players = players
 
-    def play(self):
+    def play(self) -> None:
+        '''
+        Play the game.
+        '''
         print("Welcome to Connect Four (CLI Mode)!")
-        self.board.Display()
+        self.board.display()
 
         turn = 0
         while True:
@@ -15,14 +18,14 @@ class ConnectFourCLI:
             print(f"{current_player.name}'s turn ({current_player.disc})")
 
             move = current_player.get_move(self.board)
-            self.board.DropDisc(move, current_player.disc)
-            self.board.Display()
+            self.board.drop_disc(move, current_player.disc)
+            self.board.display()
 
-            if self.board.CheckWinner(current_player.disc):
+            if self.board.check_winner(current_player.disc):
                 print(f"Congratulations! {current_player.name} wins!")
                 break
 
-            if self.board.CheckFull():
+            if self.board.is_full():
                 print("The game is a draw!")
                 break
 
