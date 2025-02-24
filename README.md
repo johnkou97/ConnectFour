@@ -1,5 +1,8 @@
 # Connect Four
 
+![Connect Four](gui.png)<br>
+*Screenshot of the Connect Four game with the GUI interface.*
+
 A Python implementation of the classic Connect Four game. This version is designed to be run as a command-line application, allowing for two players (human or computer) to compete in a fun and strategic match.
 
 ## Features
